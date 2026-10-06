@@ -528,6 +528,9 @@ class AWSCompute(
             return False
         return placement_group.configuration.region == instance_offer.region
 
+    def are_placement_groups_compatible_with_reservations(self, backend_type: BackendType) -> bool:
+        return False
+
     def create_gateway_replica(
         self,
         configuration: GatewayReplicaConfiguration,
